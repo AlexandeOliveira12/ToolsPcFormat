@@ -2,8 +2,6 @@ import os
 import tkinter as tk
 from tkinter import ttk
 from modulos import info_system, disco, limpeza, relatorio
-from modulos import atualizacoes, inicializacao, antivirus
-from modulos import instaladores  # novo módulo que vamos criar para gerenciar instaladores locais
 
 # -------------------- Função principal --------------------
 def criar_interface():
@@ -37,40 +35,6 @@ def criar_interface():
     notebook.add(frame_manut, text="🧹 Manutenção")
 
     botao(frame_manut, "🧹 Limpar Arquivos Temporários", limpeza.limpar_temporarios).pack(pady=5, fill="x")
-    botao(frame_manut, "⚡ Programas de Inicialização", inicializacao.listar_programas_inicializacao).pack(pady=5, fill="x")
-
-    # -------------------- Aba: Segurança --------------------
-    frame_seg = ttk.Frame(notebook, padding=10)
-    notebook.add(frame_seg, text="🛡 Segurança")
-
-    botao(frame_seg, "📦 Atualizações do Windows", atualizacoes.verificar_atualizacoes).pack(pady=5, fill="x")
-    botao(frame_seg, "🛡 Status do Antivírus", antivirus.verificar_status_antivirus).pack(pady=5, fill="x")
-
-    # -------------------- Aba: Instaladores Locais --------------------
-    frame_instaladores = ttk.Frame(notebook, padding=10)
-    notebook.add(frame_instaladores, text="⬇️ Instaladores Locais")
-
-    def atualizar_lista_instaladores():
-        # Limpa os widgets anteriores para atualizar a lista
-        for widget in frame_instaladores.winfo_children():
-            widget.destroy()
-
-        arquivos = instaladores.listar_instaladores()
-        if not arquivos:
-            ttk.Label(frame_instaladores, text="Nenhum instalador (.exe) encontrado na pasta 'instaladores'.").pack(pady=10)
-            return
-
-        for arquivo in arquivos:
-            frame_arquivo = ttk.Frame(frame_instaladores)
-            frame_arquivo.pack(fill="x", pady=5)
-
-            label = ttk.Label(frame_arquivo, text=arquivo, font=("Segoe UI", 11))
-            label.pack(side="left", padx=5)
-
-            botao_executar = ttk.Button(frame_arquivo, text="Executar", command=lambda a=arquivo: instaladores.executar_instalador(a))
-            botao_executar.pack(side="right", padx=5)
-
-    atualizar_lista_instaladores()
 
     root.mainloop()
 
@@ -87,7 +51,3 @@ def mostrar_info(info):
     for chave, valor in info.items():
         text.insert("end", f"{chave}: {valor}\n")
     text.config(state="disabled")
-
-
-if __name__ == "__main__":
-    criar_interface()
