@@ -1,0 +1,11 @@
+📅 Data: 2025-08-11 19:24
+💻 Sistema: Windows 10 64bit
+🖥 Nome do Computador: DESKTOP-5J9KVLJ
+🌐 Endereço IP: 192.168.0.81
+⚙️ Processador: Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+🎮 Placa de Vídeo: AMD Radeon RX 580 2048SP
+💾 Memória Total: 15.84 GB
+📀 Discos: ST500LM012 HN-M500MBB - HDD | Total: 222.91 GB | Livre: 98.26 GB - ✅ OK
+ST500LM012 HN-M500MBB - HDD | Total: 465.76 GB | Livre: 260.09 GB - ✅ OK
+KINGSTON SA400S37240G - HDD | Total: 222.91 GB | Livre: 98.26 GB - ✅ OK
+KINGSTON SA400S37240G - HDD | Total: 465.76 GB | Livre: 260.09 GB - ✅ OK
